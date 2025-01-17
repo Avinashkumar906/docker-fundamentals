@@ -1,0 +1,14 @@
+<ul>
+    @for (item of array; track $index;) {
+        <li >
+            {{item | json}}
+        </li>
+    } @empty {
+        <ul>this is empty array check!</ul>
+    }
+</ul>
+<!-- <form > -->
+    <input [ngModel]="products()" (ngModelChange)="products.set($event)" type="number">
+<!-- </form> -->
+<h2>Price of <b>{{products()}}</b> item is <b>{{total()}} and updated total after change is {{updatedtotal()}}</b></h2>
+<router-outlet />
